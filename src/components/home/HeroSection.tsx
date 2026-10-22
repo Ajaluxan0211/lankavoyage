@@ -21,7 +21,7 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setBackgroundIndex((current) => (current + 1) % destinations.length);
-    }, 6000);
+    }, 1500);
 
     return () => window.clearInterval(interval);
   }, []);
