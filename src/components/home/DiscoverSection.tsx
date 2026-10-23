@@ -1,5 +1,5 @@
 
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Star } from "lucide-react";
 import "../../styles/destination-marquee.css";
 
 import sigiriyaImage from "../../assets/sigiriya.png";
@@ -21,6 +21,7 @@ type Destination = {
   image: string;
   description: string;
   category: string;
+  rating: string;
 };
 
 const allDestinations: Destination[] = [
@@ -28,64 +29,73 @@ const allDestinations: Destination[] = [
     id: "sigiriya",
     name: "Sigiriya",
     image: sigiriyaImage,
-    description: "Ancient rock fortress and golden-hour views",
-    category: "Cultural wonder",
+    description: "Discover the ancient rock fortress",
+    category: "Ancient wonder",
+    rating: "4.9",
   },
   {
     id: "ella",
     name: "Ella",
     image: ellaImage,
-    description: "Scenic mountain views and the Nine Arch Bridge",
+    description: "Mountains, trains and scenic views",
     category: "Mountain escape",
+    rating: "4.8",
   },
   {
     id: "mirissa",
     name: "Mirissa",
     image: mirissaImage,
-    description: "Palm-lined beaches and coastal sunsets",
+    description: "Golden beaches and ocean sunsets",
     category: "Coastal getaway",
+    rating: "4.8",
   },
   {
     id: "nuwara-eliya",
     name: "Nuwara Eliya",
     image: nuwaraEliyaImage,
-    description: "Cool highlands, gardens and tea plantations",
+    description: "Tea gardens and misty highlands",
     category: "Highland retreat",
+    rating: "4.7",
   },
   {
     id: "jaffna",
     name: "Jaffna",
     image: jaffnaImage,
-    description: "Northern culture, temples and authentic local food",
+    description: "Northern culture and authentic cuisine",
     category: "Cultural escape",
+    rating: "4.7",
   },
   {
     id: "kandy",
     name: "Kandy",
     image: kandyImage,
-    description: "Sacred sites, lake views and rich traditions",
+    description: "Sacred temples and peaceful lake views",
     category: "Cultural escape",
+    rating: "4.8",
   },
   {
     id: "galle",
     name: "Galle",
     image: galleImage,
-    description: "Historic fort walls and beautiful coastal streets",
+    description: "Historic fort and coastal streets",
     category: "Coastal getaway",
+    rating: "4.7",
   },
   {
     id: "trincomalee",
     name: "Trincomalee",
     image: trincomaleeImage,
-    description: "Turquoise water, sandy beaches and ocean adventures",
-    category: "Coastal getaway",
+    description: "Clear blue water and beautiful beaches",
+    category: "Beach escape",
+    rating: "4.8",
   },
   {
     id: "yala",
     name: "Yala",
     image: yalaImage,
-    description: "Wildlife safaris and unforgettable nature",
+    description: "Wildlife safaris and natural wonders",
     category: "Wildlife adventure",
+    rating: "4.8",
   },
   {
     id: "arugam-bay",
@@ -93,13 +103,15 @@ const allDestinations: Destination[] = [
     image: arugamBayImage,
     description: "Surfing waves and laid-back beach life",
     category: "Surfing escape",
+    rating: "4.7",
   },
   {
     id: "anuradhapura",
     name: "Anuradhapura",
     image: anuradhapuraImage,
-    description: "Ancient kingdoms, stupas and sacred heritage",
-    category: "Ancient wonders",
+    description: "Ancient kingdoms and sacred heritage",
+    category: "Ancient wonder",
+    rating: "4.8",
   },
   {
     id: "bentota",
@@ -107,106 +119,116 @@ const allDestinations: Destination[] = [
     image: bentotaImage,
     description: "Relaxing beaches and river adventures",
     category: "Coastal getaway",
+    rating: "4.6",
   },
 ];
 
 export default function DiscoverSection() {
-  // Two identical sets create a continuous marquee.
+  // Two identical groups create a seamless marquee loop.
   const marqueeItems = [...allDestinations, ...allDestinations];
 
   return (
     <section className="discover-section" id="destinations">
-      <div className="discover-heading">
-        <div className="discover-eyebrow">
-          <span>✧</span>
-          DISCOVER THE ISLAND
-        </div>
-
-        <div className="discover-heading-row">
-          <div>
-            <h2>
-              Find your next
-              <br />
-              <span>Sri Lankan escape.</span>
-            </h2>
-
-            <p>
-              From ancient wonders and misty mountains to golden beaches,
-              <br className="desktop-break" />
-              discover the places that make every journey unforgettable.
-            </p>
+      <div className="discover-layout">
+        {/* Compact text area on the left */}
+        <div className="discover-intro">
+          <div className="discover-eyebrow">
+            <span>✧</span>
+            DISCOVER THE ISLAND
           </div>
 
-          <a className="view-all-button" href="#/destinations">
+          <h2>
+            Find your next
+            <br />
+            <span>Sri Lankan escape.</span>
+          </h2>
+
+          <p>
+            From ancient wonders and misty mountains to golden beaches,
+            discover the places that make every journey unforgettable.
+          </p>
+
+          <a className="discover-view-all" href="#/destinations">
             View all destinations
-            <ArrowRight size={17} />
+            <ArrowRight size={16} />
           </a>
+
+          <div className="discover-note">
+            <span className="discover-note-dot" />
+            Explore at your own pace
+          </div>
         </div>
-      </div>
 
-      <div
-        className="destination-marquee"
-        aria-label="Explore Sri Lankan destinations"
-      >
-        <div className="destination-marquee-track">
-          {marqueeItems.map((destination, index) => {
-            const isDuplicate = index >= allDestinations.length;
+        {/* Destination marquee on the right */}
+        <div
+          className="destination-marquee"
+          aria-label="Explore Sri Lankan destinations"
+        >
+          <div className="destination-marquee-track">
+            {marqueeItems.map((destination, index) => {
+              const isDuplicate = index >= allDestinations.length;
 
-            return (
-              <article
-                className="destination-card"
-                key={`${destination.id}-${index}`}
-                aria-hidden={isDuplicate}
-              >
-                <img
-                  className="destination-card-image"
-                  src={destination.image}
-                  alt={isDuplicate ? "" : destination.name}
-                  loading="eager"
-                  draggable={false}
-                />
-
-                <div className="destination-card-shade" />
-
-                <span className="destination-category">
-                  {destination.category}
-                </span>
-
-                <div className="destination-card-content">
-                  <div className="destination-location">
-                    <MapPin size={15} />
-                    Sri Lanka
-                  </div>
-
-                  <h3>{destination.name}</h3>
-
-                  <p>{destination.description}</p>
-
+              return (
+                <article
+                  className="destination-card"
+                  key={`${destination.id}-${index}`}
+                  aria-hidden={isDuplicate}
+                >
                   <a
+                    className="destination-card-main"
                     href={`#/destinations?query=${encodeURIComponent(
                       destination.name
                     )}`}
-                    className="destination-card-link"
                     tabIndex={isDuplicate ? -1 : 0}
+                    aria-label={`Explore ${destination.name}`}
                   >
-                    <span>Explore destination</span>
+                    <img
+                      className="destination-card-image"
+                      src={destination.image}
+                      alt={isDuplicate ? "" : destination.name}
+                      loading={index < 6 ? "eager" : "lazy"}
+                      draggable={false}
+                    />
 
-                    <span className="destination-arrow">
-                      <ArrowRight size={20} />
+                    <div className="destination-card-shade" />
+
+                    <span className="destination-category">
+                      {destination.category}
                     </span>
+
+                    <div className="destination-card-content">
+                      <span className="destination-location">
+                        <MapPin size={12} />
+                        Sri Lanka
+                      </span>
+
+                      <h3>{destination.name}</h3>
+
+                      <p>{destination.description}</p>
+
+                      <div className="destination-card-bottom">
+                        <span className="destination-rating">
+                          <Star size={12} fill="currentColor" />
+                          {destination.rating}
+                        </span>
+
+                        <span className="destination-arrow">
+                          <ArrowRight size={17} />
+                        </span>
+                      </div>
+                    </div>
                   </a>
-                </div>
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      <div className="marquee-caption">
-        <span className="marquee-dot" />
-        <span>Explore at your own pace</span>
-        <span className="marquee-divider">·</span>
-        <span>Discover more of Sri Lanka</span>
+      <div className="discover-bottom-line">
+        <span />
+        Discover more of Sri Lanka
+        <span />
       </div>
     </section>
   );

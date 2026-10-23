@@ -1,0 +1,843 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
+
+/* =========================================
+   COMMUNITY STORIES — LANKAVOYAGE
+   ========================================= */
+
+.community-stories {
+  --green: #123f32;
+  --deep: #062d24;
+  --mint: #168b6b;
+  --cream: #f8f7f1;
+
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  padding: 34px 0 30px;
+  background:
+    radial-gradient(
+      ellipse at 80% 8%,
+      rgb(220 225 211 / 30%),
+      transparent 28%
+    ),
+    var(--cream);
+  color: var(--green);
+  font-family: "DM Sans", sans-serif;
+}
+
+.community-stories *,
+.community-stories *::before,
+.community-stories *::after {
+  box-sizing: border-box;
+}
+
+.stories-container,
+.stories-shell {
+  width: calc(100% - 64px);
+  max-width: 1540px;
+  margin-inline: auto;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.stories-header {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 12px 22px;
+}
+
+.stories-heading,
+.stories-heading-copy {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 650px;
+  min-width: 0;
+}
+
+.stories-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+}
+
+.stories-eyebrow svg {
+  flex-shrink: 0;
+  color: var(--mint);
+}
+
+.stories-heading h2,
+.stories-header h2 {
+  margin: 0;
+  color: var(--green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: -1.5px;
+}
+
+.stories-heading h2 span,
+.stories-header h2 span {
+  display: block;
+  color: var(--mint);
+}
+
+.stories-heading > p,
+.stories-header p {
+  max-width: 590px;
+  margin: 12px 0 0;
+  color: #697770;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* =========================================
+   DECORATIVE ROUTE AND HEADER BUTTON
+   ========================================= */
+
+.stories-header-art {
+  position: relative;
+  display: flex;
+  flex: 1 1 400px;
+  min-width: 0;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 145px;
+}
+
+.stories-route {
+  position: absolute;
+  top: 12px;
+  right: 4%;
+  width: min(100%, 520px);
+  color: #a8bcb0;
+  pointer-events: none;
+}
+
+.stories-route svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.stories-route span {
+  position: absolute;
+  top: 26px;
+  left: 42%;
+  transform: rotate(-9deg);
+  color: #89978e;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.stories-route-art {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: min(100%, 520px);
+  color: #a8bcb0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.stories-route-note {
+  position: absolute;
+  top: 35px;
+  right: 28%;
+  transform: rotate(-9deg);
+  color: #89978e;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.stories-view-all {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 2px;
+  padding: 13px 19px;
+  border: 1px solid #d6e0d8;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 65%);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease;
+}
+
+.stories-view-all:hover {
+  transform: translateY(-2px);
+  background: var(--green);
+  color: white;
+}
+
+/* =========================================
+   STORY CARDS GRID
+   ========================================= */
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.story-card {
+  position: relative;
+  isolation: isolate;
+  height: 360px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 19px;
+  background: var(--green);
+  color: white;
+  box-shadow: 0 10px 24px rgb(17 55 42 / 9%);
+  animation: story-enter 0.6s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.story-image,
+.story-card-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.story-card:hover .story-image,
+.story-card:hover .story-card-image {
+  transform: scale(1.045);
+}
+
+.story-overlay,
+.story-card-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(2 25 19 / 7%) 0%,
+    rgb(3 30 23 / 0%) 24%,
+    rgb(3 30 23 / 35%) 43%,
+    rgb(3 30 23 / 83%) 72%,
+    rgb(3 31 24 / 98%) 100%
+  );
+}
+
+.story-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  max-width: calc(100% - 30px);
+  padding: 8px 12px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 38%);
+  border-radius: 999px;
+  background: rgb(19 57 45 / 66%);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Supports both story-content class names */
+
+.story-content,
+.story-card-content {
+  position: absolute;
+  right: 15px;
+  bottom: 14px;
+  left: 15px;
+  min-width: 0;
+}
+
+.story-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: rgb(255 255 255 / 95%);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.story-location svg {
+  flex-shrink: 0;
+}
+
+.story-card h3,
+.story-content h3 {
+  margin: 0 0 7px;
+  color: #fffdf8;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(16px, 1.35vw, 21px);
+  font-weight: 700;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.story-description {
+  min-height: 36px;
+  margin: 0 0 12px;
+  color: rgb(255 255 255 / 94%);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   STORY AUTHOR AND ACTIONS
+   ========================================= */
+
+.story-footer,
+.story-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.story-author {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.story-avatar {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  place-items: center;
+  border: 2px solid rgb(255 255 255 / 80%);
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
+}
+
+.avatar-coral {
+  background: linear-gradient(135deg, #bb715b, #f0c5a1);
+}
+
+.avatar-blue {
+  background: linear-gradient(135deg, #245e83, #a7d4db);
+}
+
+.avatar-rose {
+  background: linear-gradient(135deg, #a45e75, #e5b5b3);
+}
+
+.avatar-gold {
+  background: linear-gradient(135deg, #8a633c, #e7c08b);
+}
+
+.story-author-info,
+.story-author {
+  overflow: hidden;
+}
+
+.story-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.story-author strong,
+.story-author-info strong {
+  display: block;
+  overflow: hidden;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.story-author small,
+.story-author-info small,
+.story-author span {
+  display: block;
+  overflow: hidden;
+  color: rgb(255 255 255 / 76%);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.story-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 9px;
+}
+
+.story-likes,
+.story-like {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.story-like {
+  cursor: pointer;
+}
+
+.story-like svg,
+.story-likes svg {
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.story-like:hover svg {
+  transform: scale(1.15);
+}
+
+.story-like.is-liked {
+  color: #9ce5c4;
+}
+
+.story-arrow,
+.story-open {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #fffdf6;
+  color: var(--green);
+  text-decoration: none;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease;
+}
+
+.story-arrow:hover,
+.story-open:hover {
+  transform: translateX(3px);
+  background: #a5edc7;
+}
+
+/* =========================================
+   COMMUNITY JOIN BANNER
+   ========================================= */
+
+.stories-community-banner,
+.stories-join-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr) auto;
+  align-items: center;
+  gap: 22px;
+  min-height: 118px;
+  margin-top: 14px;
+  padding: 18px 28px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 19px;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(5 48 37 / 97%),
+      rgb(5 48 37 / 89%) 58%,
+      rgb(5 48 37 / 78%)
+    ),
+    linear-gradient(135deg, #0d5943, #123f32);
+  color: white;
+}
+
+.stories-community-banner::before,
+.stories-community-banner::after,
+.stories-join-banner::before,
+.stories-join-banner::after {
+  position: absolute;
+  top: -60%;
+  width: 260px;
+  height: 220%;
+  border: 1px solid rgb(180 229 202 / 12%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.stories-community-banner::before,
+.stories-join-banner::before {
+  left: -180px;
+}
+
+.stories-community-banner::after,
+.stories-join-banner::after {
+  right: -180px;
+}
+
+.community-members,
+.stories-community-people {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  padding-bottom: 26px;
+}
+
+.member-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.member-avatars span,
+.community-avatar,
+.community-add {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  place-items: center;
+  margin-left: -9px;
+  border: 2px solid #dce8dc;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #f0d4b4, #8f634b);
+  color: #173e32;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+}
+
+.member-avatars span:first-child,
+.community-avatar:first-child {
+  margin-left: 0;
+}
+
+.member-avatars span:nth-child(2),
+.community-avatar-two {
+  background: linear-gradient(140deg, #d5e5dc, #5b8d83);
+}
+
+.member-avatars span:nth-child(3),
+.community-avatar-three {
+  background: linear-gradient(140deg, #f0c9a8, #9c6a53);
+}
+
+.member-avatars span:nth-child(4),
+.community-avatar-four {
+  background: linear-gradient(140deg, #e9c7a1, #6b4b3b);
+}
+
+.member-avatars .member-plus,
+.community-add {
+  width: 38px;
+  height: 38px;
+  flex-basis: 38px;
+  align-self: center;
+  margin-left: -5px;
+  background: #dcefe0;
+  font-size: 21px;
+}
+
+.community-members > p,
+.stories-community-people small {
+  position: absolute;
+  top: 49px;
+  left: 10px;
+  margin: 0;
+  color: #c6dfd0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.community-message,
+.stories-banner-copy {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.community-message h3,
+.stories-banner-copy h3 {
+  margin: 0 0 5px;
+  color: white;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(22px, 2.2vw, 31px);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.community-message p,
+.stories-banner-copy p {
+  margin: 3px 0 0;
+  color: rgb(255 255 255 / 88%);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.community-cta,
+.stories-share-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: #a8edc6;
+  color: #123f32;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease;
+}
+
+.community-cta:hover,
+.stories-share-button:hover {
+  transform: translateY(-2px);
+  background: #c7f5d9;
+}
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+@keyframes story-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-card {
+    animation: none;
+  }
+
+  .story-image,
+  .story-card-image,
+  .stories-view-all,
+  .story-arrow,
+  .story-open,
+  .community-cta,
+  .stories-share-button {
+    transition: none;
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .stories-container,
+  .stories-shell {
+    width: calc(100% - 40px);
+  }
+
+  .stories-header {
+    margin-inline: 8px;
+  }
+
+  .stories-heading h2,
+  .stories-header h2 {
+    font-size: clamp(36px, 4.5vw, 50px);
+  }
+
+  .stories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .story-card {
+    height: 370px;
+  }
+
+  .story-card h3,
+  .story-content h3 {
+    font-size: 21px;
+  }
+
+  .stories-community-banner,
+  .stories-join-banner {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .community-cta,
+  .stories-share-button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+  .community-stories {
+    padding: 28px 0 24px;
+  }
+
+  .stories-container,
+  .stories-shell {
+    width: calc(100% - 28px);
+  }
+
+  .stories-header {
+    display: block;
+    margin: 0 4px 20px;
+  }
+
+  .stories-heading,
+  .stories-heading-copy {
+    width: 100%;
+  }
+
+  .stories-eyebrow {
+    gap: 8px;
+    margin-bottom: 11px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .stories-heading h2,
+  .stories-header h2 {
+    font-size: clamp(35px, 9vw, 46px);
+    line-height: 1.04;
+    letter-spacing: -1px;
+  }
+
+  .stories-heading > p,
+  .stories-header p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .stories-header-art {
+    min-height: 0;
+    margin-top: 14px;
+  }
+
+  .stories-route,
+  .stories-route-art,
+  .stories-route-note {
+    display: none;
+  }
+
+  .stories-view-all {
+    margin-top: 14px;
+    padding: 11px 15px;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .story-card {
+    height: 360px;
+    min-height: 0;
+    border-radius: 17px;
+  }
+
+  .story-content,
+  .story-card-content {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .story-card h3,
+  .story-content h3 {
+    font-size: 21px;
+  }
+
+  .story-description {
+    min-height: 0;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .stories-community-banner,
+  .stories-join-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    min-height: 0;
+    margin-top: 14px;
+    padding: 22px;
+  }
+
+  .community-members,
+  .stories-community-people {
+    max-width: 300px;
+  }
+
+  .community-message h3,
+  .stories-banner-copy h3 {
+    font-size: 26px;
+  }
+
+  .community-cta,
+  .stories-share-button {
+    grid-column: auto;
+    justify-self: start;
+  }
+}

@@ -2,8 +2,6 @@
 
 @import "tailwindcss";
 
-
-
 :root {
 
   font-family: Inter, sans-serif;
@@ -34,23 +32,17 @@
 
 }
 
-
-
 * {
 
   box-sizing: border-box;
 
 }
 
-
-
 html {
 
   scroll-behavior: smooth;
 
 }
-
-
 
 body {
 
@@ -60,8 +52,6 @@ body {
 
 }
 
-
-
 button,
 
 input {
@@ -69,8 +59,6 @@ input {
   font: inherit;
 
 }
-
-
 
 button,
 
@@ -80,8 +68,6 @@ a {
 
 }
 
-
-
 a {
 
   color: inherit;
@@ -90,15 +76,11 @@ a {
 
 }
 
-
-
 button {
 
   cursor: pointer;
 
 }
-
-
 
 button:focus-visible,
 
@@ -111,8 +93,6 @@ input:focus-visible {
   outline-offset: 3px;
 
 }
-
-
 
 .hero-shell {
 
@@ -136,8 +116,6 @@ input:focus-visible {
 
 }
 
-
-
 .hero-backgrounds,
 
 .hero-background,
@@ -156,8 +134,6 @@ input:focus-visible {
 
 }
 
-
-
 .hero-background {
 
   overflow: hidden;
@@ -166,8 +142,6 @@ input:focus-visible {
 
 }
 
-
-
 .hero-background img {
 
   object-fit: cover;
@@ -175,8 +149,6 @@ input:focus-visible {
   object-position: center;
 
 }
-
-
 
 .hero-overlay {
 
@@ -187,8 +159,6 @@ input:focus-visible {
   background: radial-gradient(circle at 75% 25%, rgba(245, 165, 36, .12), transparent 55%), linear-gradient(90deg, rgba(5, 25, 18, .78) 0%, rgba(5, 25, 18, .62) 38%, rgba(5, 25, 18, .19) 72%, rgba(5, 25, 18, .06) 100%), linear-gradient(0deg, rgba(5, 25, 18, .78) 0%, rgba(5, 25, 18, .18) 35%, transparent 72%);
 
 }
-
-
 
 .nav-glass {
 
@@ -204,8 +174,6 @@ input:focus-visible {
 
 }
 
-
-
 .brand-lockup {
 
   display: flex;
@@ -215,8 +183,6 @@ input:focus-visible {
   gap: 10px;
 
 }
-
-
 
 .brand-mark {
 
@@ -244,8 +210,6 @@ input:focus-visible {
 
 }
 
-
-
 .brand-mark span {
 
   border: 1px solid #8edb8b;
@@ -262,8 +226,6 @@ input:focus-visible {
 
 }
 
-
-
 .brand-copy {
 
   display: flex;
@@ -273,8 +235,6 @@ input:focus-visible {
   line-height: 1.1;
 
 }
-
-
 
 .brand-copy strong {
 
@@ -286,15 +246,11 @@ input:focus-visible {
 
 }
 
-
-
 .brand-copy strong span {
 
   color: #16875f;
 
 }
-
-
 
 .brand-copy small {
 
@@ -309,8 +265,6 @@ input:focus-visible {
   color: #41665e;
 
 }
-
-
 
 .nav-link {
 
@@ -336,8 +290,6 @@ input:focus-visible {
 
 }
 
-
-
 .nav-link:hover,
 
 .nav-link.active {
@@ -345,8 +297,6 @@ input:focus-visible {
   color: #16875f;
 
 }
-
-
 
 .nav-link.active::after {
 
@@ -368,8 +318,6 @@ input:focus-visible {
 
 }
 
-
-
 .icon-button {
 
   display: inline-flex;
@@ -386,11 +334,9 @@ input:focus-visible {
 
   color: #183d37;
 
-  transition: background .2s, transform .2s;
+  transition: *background* .2s, transform .2s;
 
 }
-
-
 
 .icon-button:hover {
 
@@ -399,8 +345,6 @@ input:focus-visible {
   transform: translateY(-1px);
 
 }
-
-
 
 .signin-button {
 
@@ -420,11 +364,9 @@ input:focus-visible {
 
   font: 600 13px 'Plus Jakarta Sans', sans-serif;
 
-  transition: background .2s, transform .2s;
+  transition: *background* .2s, transform .2s;
 
 }
-
-
 
 .signin-button:hover {
 
@@ -433,8 +375,6 @@ input:focus-visible {
   transform: translateY(-1px);
 
 }
-
-
 
 .nav-search,
 
@@ -449,8 +389,6 @@ input:focus-visible {
   border: 1px solid #ffffffa6;
 
 }
-
-
 
 .nav-search input {
 
@@ -468,8 +406,6 @@ input:focus-visible {
 
 }
 
-
-
 .search-mini-button {
 
   background: #0e8a5f;
@@ -486,8 +422,6 @@ input:focus-visible {
 
 }
 
-
-
 .mobile-menu {
 
   display: flex;
@@ -497,8 +431,6 @@ input:focus-visible {
   gap: 4px;
 
 }
-
-
 
 .mobile-menu>a {
 
@@ -512,8 +444,6 @@ input:focus-visible {
 
 }
 
-
-
 .mobile-menu>a:hover {
 
   background: #ecf8f1;
@@ -521,8 +451,6 @@ input:focus-visible {
   color: #0e8a5f;
 
 }
-
-
 
 .mobile-signin {
 
@@ -539,8 +467,6 @@ input:focus-visible {
   color: white !important;
 
 }
-
-
 
 .hero-content {
 
@@ -564,15 +490,11 @@ input:focus-visible {
 
 }
 
-
-
 .hero-copy {
 
   min-width: 0;
 
 }
-
-
 
 .eyebrow {
 
@@ -594,8 +516,6 @@ input:focus-visible {
 
 }
 
-
-
 .eyebrow i {
 
   display: block;
@@ -607,8 +527,6 @@ input:focus-visible {
   background: #ffffff70;
 
 }
-
-
 
 .hero-copy h1 {
 
@@ -632,8 +550,6 @@ input:focus-visible {
 
 }
 
-
-
 .headline-green {
 
   width: fit-content;
@@ -648,8 +564,6 @@ input:focus-visible {
 
 }
 
-
-
 .headline-sub {
 
   margin-top: 10px;
@@ -659,8 +573,6 @@ input:focus-visible {
   letter-spacing: -.035em;
 
 }
-
-
 
 .hero-description {
 
@@ -677,8 +589,6 @@ input:focus-visible {
   text-shadow: 0 2px 10px #0005;
 
 }
-
-
 
 .destination-search {
 
@@ -708,15 +618,11 @@ input:focus-visible {
 
 }
 
-
-
 .destination-search:focus-within {
 
   box-shadow: 0 0 0 4px #1d9e7555, 0 22px 55px #0003;
 
 }
-
-
 
 .search-field {
 
@@ -734,15 +640,11 @@ input:focus-visible {
 
 }
 
-
-
 .where-field {
 
   flex: 1;
 
 }
-
-
 
 .search-icon {
 
@@ -764,8 +666,6 @@ input:focus-visible {
 
 }
 
-
-
 .search-icon.teal {
 
   color: #0b4f4a;
@@ -773,8 +673,6 @@ input:focus-visible {
   background: #eaf6f4;
 
 }
-
-
 
 .search-field-copy {
 
@@ -788,8 +686,6 @@ input:focus-visible {
 
 }
 
-
-
 .search-label {
 
   color: #1b2a2a;
@@ -799,8 +695,6 @@ input:focus-visible {
   font-weight: 800;
 
 }
-
-
 
 .search-field input {
 
@@ -822,15 +716,11 @@ input:focus-visible {
 
 }
 
-
-
 .search-field input::placeholder {
 
   color: #8a9390;
 
 }
-
-
 
 .search-divider {
 
@@ -844,8 +734,6 @@ input:focus-visible {
 
 }
 
-
-
 .season-wrap {
 
   position: relative;
@@ -853,8 +741,6 @@ input:focus-visible {
   flex: 0 0 205px;
 
 }
-
-
 
 .season-button {
 
@@ -869,8 +755,6 @@ input:focus-visible {
   color: #183d37;
 
 }
-
-
 
 .season-value {
 
@@ -888,15 +772,11 @@ input:focus-visible {
 
 }
 
-
-
 .rotate-180 {
 
   transform: rotate(180deg);
 
 }
-
-
 
 .season-menu {
 
@@ -926,8 +806,6 @@ input:focus-visible {
 
 }
 
-
-
 .season-menu button {
 
   padding: 10px;
@@ -942,8 +820,6 @@ input:focus-visible {
 
 }
 
-
-
 .season-menu button:hover {
 
   background: #eaf8f0;
@@ -951,8 +827,6 @@ input:focus-visible {
   color: #0e8a5f;
 
 }
-
-
 
 .search-submit {
 
@@ -986,8 +860,6 @@ input:focus-visible {
 
 }
 
-
-
 .search-submit:hover {
 
   transform: translateY(-1px);
@@ -996,15 +868,11 @@ input:focus-visible {
 
 }
 
-
-
 .search-submit:active {
 
   transform: scale(.97);
 
 }
-
-
 
 .popular-destinations {
 
@@ -1020,8 +888,6 @@ input:focus-visible {
 
 }
 
-
-
 .popular-label {
 
   margin-right: 3px;
@@ -1033,8 +899,6 @@ input:focus-visible {
   font-weight: 600;
 
 }
-
-
 
 .popular-destinations button {
 
@@ -1052,11 +916,9 @@ input:focus-visible {
 
   font-size: 11px;
 
-  transition: background .2s, transform .2s;
+  transition: *background* .2s, transform .2s;
 
 }
-
-
 
 .popular-destinations button:hover {
 
@@ -1065,8 +927,6 @@ input:focus-visible {
   background: #ffffff3d;
 
 }
-
-
 
 .hero-features {
 
@@ -1084,8 +944,6 @@ input:focus-visible {
 
 }
 
-
-
 .hero-feature {
 
   display: flex;
@@ -1097,8 +955,6 @@ input:focus-visible {
   min-width: 0;
 
 }
-
-
 
 .feature-icon {
 
@@ -1118,11 +974,9 @@ input:focus-visible {
 
   background: #ffffff0a;
 
-  transition: transform .25s, background .25s;
+  transition: transform .25s, *background* .25s;
 
 }
-
-
 
 .hero-feature:hover .feature-icon {
 
@@ -1132,8 +986,6 @@ input:focus-visible {
 
 }
 
-
-
 .feature-icon.mint {
 
   color: #71e2b7;
@@ -1142,8 +994,6 @@ input:focus-visible {
 
 }
 
-
-
 .feature-icon.gold {
 
   color: #f5c14c;
@@ -1151,8 +1001,6 @@ input:focus-visible {
   border-color: #d9a22c;
 
 }
-
-
 
 .hero-feature>span:last-child {
 
@@ -1170,15 +1018,11 @@ input:focus-visible {
 
 }
 
-
-
 .hero-feature strong {
 
   font-weight: 700;
 
 }
-
-
 
 .destination-rail {
 
@@ -1187,8 +1031,6 @@ input:focus-visible {
   align-items: center;
 
 }
-
-
 
 .rail-cards {
 
@@ -1201,8 +1043,6 @@ input:focus-visible {
   gap: 13px;
 
 }
-
-
 
 .rail-card {
 
@@ -1230,8 +1070,6 @@ input:focus-visible {
 
 }
 
-
-
 .rail-card img {
 
   width: 100%;
@@ -1244,23 +1082,17 @@ input:focus-visible {
 
 }
 
-
-
 .rail-card:hover img {
 
   transform: scale(1.08);
 
 }
 
-
-
 .rail-card:hover {
 
   opacity: 1;
 
 }
-
-
 
 .rail-card-active {
 
@@ -1274,8 +1106,6 @@ input:focus-visible {
 
 }
 
-
-
 .rail-card-shade {
 
   position: absolute;
@@ -1285,8 +1115,6 @@ input:focus-visible {
   background: linear-gradient(0deg, #000b, transparent 60%);
 
 }
-
-
 
 .rail-card-label {
 
@@ -1312,8 +1140,6 @@ input:focus-visible {
 
 }
 
-
-
 .rail-controls {
 
   display: flex;
@@ -1325,8 +1151,6 @@ input:focus-visible {
   padding-top: 2px;
 
 }
-
-
 
 .rail-controls button {
 
@@ -1348,11 +1172,9 @@ input:focus-visible {
 
   backdrop-filter: blur(12px);
 
-  transition: background .2s, transform .2s;
+  transition: *background* .2s, transform .2s;
 
 }
-
-
 
 .rail-controls button:hover {
 
@@ -1361,8 +1183,6 @@ input:focus-visible {
   transform: scale(1.04);
 
 }
-
-
 
 .scroll-cue {
 
@@ -1396,8 +1216,6 @@ input:focus-visible {
 
 }
 
-
-
 .scroll-mouse {
 
   display: flex;
@@ -1416,8 +1234,6 @@ input:focus-visible {
 
 }
 
-
-
 .scroll-mouse i {
 
   width: 3px;
@@ -1432,11 +1248,7 @@ input:focus-visible {
 
 }
 
-
-
 @keyframes cue-bob {
-
-
 
   0%,
 
@@ -1446,8 +1258,6 @@ input:focus-visible {
 
   }
 
-
-
   50% {
 
     margin-bottom: 4px;
@@ -1455,8 +1265,6 @@ input:focus-visible {
   }
 
 }
-
-
 
 @keyframes wheel {
 
@@ -1468,8 +1276,6 @@ input:focus-visible {
 
   }
 
-
-
   100% {
 
     transform: translateY(7px);
@@ -1479,8 +1285,6 @@ input:focus-visible {
   }
 
 }
-
-
 
 .below-hero {
 
@@ -1494,8 +1298,6 @@ input:focus-visible {
 
 }
 
-
-
 .section-eyebrow {
 
   color: #1d9e75;
@@ -1508,8 +1310,6 @@ input:focus-visible {
 
 }
 
-
-
 .below-hero h2 {
 
   margin: 12px 0;
@@ -1518,15 +1318,11 @@ input:focus-visible {
 
 }
 
-
-
 .below-hero p:last-child {
 
   color: #61736b;
 
 }
-
-
 
 @media (max-width: 1279px) {
 
@@ -1540,8 +1336,6 @@ input:focus-visible {
 
   }
 
-
-
   .rail-card {
 
     width: 130px;
@@ -1550,23 +1344,17 @@ input:focus-visible {
 
   }
 
-
-
   .hero-copy h1 {
 
     font-size: clamp(3.2rem, 6vw, 5.3rem);
 
   }
 
-
-
   .hero-features {
 
     gap: 8px;
 
   }
-
-
 
   .feature-icon {
 
@@ -1580,8 +1368,6 @@ input:focus-visible {
 
 }
 
-
-
 @media (max-width: 1023px) {
 
   .hero-shell {
@@ -1594,8 +1380,6 @@ input:focus-visible {
 
   }
 
-
-
   .hero-content {
 
     display: block;
@@ -1606,15 +1390,11 @@ input:focus-visible {
 
   }
 
-
-
   .hero-copy {
 
     max-width: 800px;
 
   }
-
-
 
   .hero-copy h1 {
 
@@ -1622,23 +1402,17 @@ input:focus-visible {
 
   }
 
-
-
   .hero-description {
 
     max-width: 600px;
 
   }
 
-
-
   .hero-features {
 
     max-width: 750px;
 
   }
-
-
 
   .scroll-cue {
 
@@ -1648,8 +1422,6 @@ input:focus-visible {
 
 }
 
-
-
 @media (max-width: 639px) {
 
   .hero-shell {
@@ -1658,15 +1430,11 @@ input:focus-visible {
 
   }
 
-
-
   .hero-background img {
 
     object-position: 58% center;
 
   }
-
-
 
   .hero-overlay {
 
@@ -1674,15 +1442,11 @@ input:focus-visible {
 
   }
 
-
-
   .nav-glass {
 
     padding: 9px 11px;
 
   }
-
-
 
   .brand-mark {
 
@@ -1691,8 +1455,6 @@ input:focus-visible {
     height: 36px;
 
   }
-
-
 
   .brand-mark span {
 
@@ -1704,15 +1466,11 @@ input:focus-visible {
 
   }
 
-
-
   .brand-copy strong {
 
     font-size: 16px;
 
   }
-
-
 
   .brand-copy small {
 
@@ -1722,15 +1480,11 @@ input:focus-visible {
 
   }
 
-
-
   .hero-content {
 
     padding: 125px 20px 92px;
 
   }
-
-
 
   .eyebrow {
 
@@ -1740,23 +1494,17 @@ input:focus-visible {
 
   }
 
-
-
   .eyebrow i {
 
     width: 28px;
 
   }
 
-
-
   .hero-copy h1 {
 
     font-size: clamp(3.2rem, 15vw, 4.5rem);
 
   }
-
-
 
   .headline-sub {
 
@@ -1766,8 +1514,6 @@ input:focus-visible {
 
   }
 
-
-
   .hero-description {
 
     font-size: 14px;
@@ -1775,8 +1521,6 @@ input:focus-visible {
     margin-bottom: 20px;
 
   }
-
-
 
   .destination-search {
 
@@ -1792,15 +1536,11 @@ input:focus-visible {
 
   }
 
-
-
   .search-field {
 
     padding: 8px 5px;
 
   }
-
-
 
   .search-divider {
 
@@ -1810,23 +1550,17 @@ input:focus-visible {
 
   }
 
-
-
   .season-wrap {
 
     flex: 0 0 auto;
 
   }
 
-
-
   .season-button {
 
     padding: 8px 5px;
 
   }
-
-
 
   .season-menu {
 
@@ -1835,8 +1569,6 @@ input:focus-visible {
     width: 100%;
 
   }
-
-
 
   .search-submit {
 
@@ -1848,8 +1580,6 @@ input:focus-visible {
 
   }
 
-
-
   .popular-destinations {
 
     gap: 6px;
@@ -1858,15 +1588,11 @@ input:focus-visible {
 
   }
 
-
-
   .popular-label {
 
     width: 100%;
 
   }
-
-
 
   .popular-destinations button {
 
@@ -1875,8 +1601,6 @@ input:focus-visible {
     font-size: 10px;
 
   }
-
-
 
   .hero-features {
 
@@ -1888,8 +1612,6 @@ input:focus-visible {
 
   }
 
-
-
   .feature-icon {
 
     flex-basis: 38px;
@@ -1900,15 +1622,11 @@ input:focus-visible {
 
   }
 
-
-
   .hero-feature>span:last-child {
 
     font-size: 10px;
 
   }
-
-
 
   .scroll-cue {
 
@@ -1918,11 +1636,7 @@ input:focus-visible {
 
 }
 
-
-
 @media (prefers-reduced-motion: reduce) {
-
-
 
   *,
 
@@ -1943,86 +1657,227 @@ input:focus-visible {
 }
 
 /* ==========================================
+
    LankaVoyage Navbar — Compact, Light Glass
+
    Final overrides: place after the existing styles
+
    ========================================== */
+
 .nav-glass {
+
   box-sizing: border-box;
+
   height: 62px !important;
+
   min-height: 62px !important;
+
   padding: 0 20px !important;
+
   gap: 16px !important;
+
   background: rgba(255, 255, 255, 0.82) !important;
+
   color: #1b2a2a;
+
   border: 1px solid rgba(255, 255, 255, 0.75);
+
   border-radius: 999px;
+
   box-shadow: 0 5px 18px rgba(10, 40, 32, 0.07);
+
   backdrop-filter: blur(12px);
+
   -webkit-backdrop-filter: blur(12px);
+
 }
 
 .brand-lockup {
+
   display: flex;
+
   align-items: center;
+
   gap: 8px;
+
   flex-shrink: 0;
+
 }
 
 .brand-mark {
+
   width: 38px;
+
   height: 38px;
+
 }
 
 .brand-mark span {
+
   width: 27px;
+
   height: 27px;
+
 }
 
 .brand-copy strong {
+
   font-size: 18px;
+
 }
 
 .brand-copy small {
+
   margin-top: 3px;
+
   font-size: 7px;
+
 }
 
 .nav-link {
+
   padding: 6px 0;
+
   font-size: 12px;
+
 }
 
 .icon-button {
+
   width: 32px;
+
   height: 32px;
+
 }
 
 .signin-button {
+
   min-height: 38px;
+
   padding: 0 16px;
+
   font-size: 12px;
+
 }
 
 @media (min-width: 901px) {
+
   .nav-glass {
+
     width: calc(100% - 48px);
+
     margin: 10px auto 0;
+
   }
+
 }
 
 @media (max-width: 900px) {
+
   .nav-glass {
+
     height: 58px !important;
+
     min-height: 58px !important;
+
     padding: 0 14px !important;
+
   }
 
   .brand-mark {
+
     width: 35px;
+
     height: 35px;
+
   }
 
   .brand-copy strong {
+
     font-size: 16px;
+
+  }
+
+}
+
+/* =========================================================
+   DISCOVER SECTION — WHITE BACKGROUND + CLEAR GAP
+   Keeps the existing hero background and slideshow animation.
+   ========================================================= */
+
+html,
+body,
+#root {
+  background-color: #ffffff;
+}
+
+#root .discover-section {
+  position: relative;
+  width: 100%;
+  margin-top: 0 !important;
+  margin-bottom: 0;
+  padding: 38px 0 26px !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #173f30 !important;
+  border: 0;
+  box-shadow: none;
+}
+
+/* White separation between the hero and Discover section */
+#root .discover-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+#root .discover-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+#root .discover-section .discover-eyebrow {
+  color: #168364 !important;
+}
+
+#root .discover-section h2 {
+  color: #174b35 !important;
+}
+
+#root .discover-section h2 span {
+  color: #159475 !important;
+}
+
+#root .discover-section p {
+  color: #66786f;
+}
+
+/* Keep image-card text white for contrast */
+#root .discover-section .destination-card {
+  color: #ffffff;
+}
+
+#root .discover-section .destination-marquee,
+#root .discover-section .destination-marquee-track {
+  background: transparent;
+}
+
+#root .discover-section .marquee-caption {
+  color: #718178;
+}
+
+@media (max-width: 700px) {
+  #root .discover-section {
+    padding: 28px 0 20px !important;
+  }
+
+  #root .discover-section::before {
+    height: 20px;
   }
 }
+
